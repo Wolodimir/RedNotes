@@ -1,4 +1,9 @@
 package com.first.rednotes.dao;
 
-public interface UserRepo {
+import com.first.rednotes.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepo extends JpaRepository<User, Long> {
+    User findByUsername(String username);
+
 }
