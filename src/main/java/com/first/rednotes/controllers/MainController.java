@@ -20,9 +20,10 @@ public class MainController {
     }
 
     @GetMapping("")
-    public String main(Model model){
+    public String main(){
         return "main";
     }
+
 
 
 }
