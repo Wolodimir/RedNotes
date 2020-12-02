@@ -18,28 +18,38 @@
             <div class="header-box-2">
                 <h1>Red Notes</h1>
             </div>
-            <div class="header-box-3"></div>
+            <div class="header-box-3">
+                <form th:action="@{/logout}" method="post">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <input type="submit" value="Sign Out"/>
+                </form>
+            </div>
         </header>
         <main>
-            <div class="content-box-1">
+            <form action="" class="content-box-1">
                 <div class="text">
-                    <div>
-                        <textarea class="teg" placeholder="Введите заголовок" spellcheck="true" name=""></textarea>
-                        <textarea class="general" placeholder="Заметка..." spellcheck="true" name="" id=""></textarea>
-                    </div>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <textarea class="teg" placeholder="Введите заголовок" spellcheck="true" name="heading"></textarea>
+                    <textarea class="general" placeholder="Заметка..." spellcheck="true" name="text"></textarea>
                 </div>
+
                 <div class="push">
-                    <button class="button-1">
+                    <button class="button-1" type="submit">
                         <p>Сохранить</p>
                     </button>
                     <button class="button-2">
                         <p>Все заметки</p>
                     </button>
                 </div>
-            </div>
+            </form>
             <div class="content-box-2">
                 <div class="notes">
-                    <div></div>
+                    <div th:each="el: ${notes}">
+                        <h3 th:text="${el.heading}"></h3>
+                        <h3 th:text="${el.text}"></h3>
+                        <h3>Автор этого шедевра</h3>
+                        <h3 th:text="${el.authorName}"></h3>
+                    </div>
                 </div>
                 <div class="notes">
                     <div></div>

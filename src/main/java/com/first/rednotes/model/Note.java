@@ -15,7 +15,9 @@ public class Note {
     @JoinColumn (name = "user_id")
     private User author;
 
-    public Note(){ }
+    public Note(){
+
+    }
     public Note(String text, String heading, User user) {
         this.text = text;
         this.heading = heading;

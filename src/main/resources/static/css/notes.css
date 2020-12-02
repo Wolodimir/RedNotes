@@ -53,7 +53,7 @@ main {
     height: 90%;
     background: white;
 }
-.content-box-1 {
+main form {
     width: 40%;
     height: 90%;
     background: white;
@@ -63,7 +63,7 @@ main {
     justify-content: center;
     align-items: center;
 }
-.text div {
+.text form {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -149,11 +149,13 @@ main {
     background: white;
 }
 .notes {
-    display: flex;
+    /*display: flex;*/
     justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 50%;
+    overflow: auto;
+
 }
 .notes div{
     width: 95%;
