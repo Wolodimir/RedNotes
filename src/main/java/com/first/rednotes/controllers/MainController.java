@@ -24,6 +24,8 @@ public class MainController {
         return "main";
     }
 
-
-
+    @GetMapping("/notes")
+    public String notesPage(){
+        return "notes";
+    }
 }
