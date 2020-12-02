@@ -52,7 +52,9 @@
                     </div>
                 </div>
                 <div class="notes">
-                    <div></div>
+                    <div th:each="el : ${notes}">
+                        <h3 th:text="${el.heading}"></h3>
+                    </div>
                 </div>
             </div>
         </main>
