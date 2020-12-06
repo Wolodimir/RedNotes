@@ -7,10 +7,10 @@ import com.first.rednotes.model.User;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Optional;
 
 
 @Controller
@@ -49,4 +49,17 @@ public class MainController {
         return "redirect:/rednotes/notes";
 
     }
+
+    @GetMapping("/notes/{id}")
+    public String findOneNote(@PathVariable(value = "id")Integer id, Model model){
+        if(!noteRepo.existsById(id)){
+            return "redirect:/rednotes/notes";
+        }
+        Optional<Note> note = noteRepo.findById(id);
+        ArrayList<Note> n = new ArrayList<>();
+        note.ifPresent(n::add);
+        model.addAttribute("note", n);
+        return "edit";
+    }
+
 }

@@ -12,55 +12,65 @@
     <title>Notes</title>
 </head>
 <body>
-    <div class="conteiner">
-        <header>
-            <div class="header-box-1"></div>
-            <div class="header-box-2">
-                <h1>Red Notes</h1>
-            </div>
-            <div class="header-box-3">
-                <form th:action="@{/logout}" method="post">
-                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                    <input type="submit" value="Sign Out"/>
-                </form>
-            </div>
-        </header>
-        <main>
-            <form action="" class="content-box-1">
-                <div class="text">
+<div class="conteiner">
+    <header>
+        <div class="header-box-1"></div>
+        <div class="header-box-2">
+            <h1>Red Notes</h1>
+        </div>
+        <div class="header-box-3">
+            <form th:action="@{/logout}" method="post">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                <input type="submit" value="Выйти" class="button-logout"/>
+            </form>
+        </div>
+    </header>
+    <main>
+        <form th:action="@{/rednotes/notes}" class="content-box-1" method="post">
+            <div class="text">
+                <div>
                     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                     <textarea class="teg" placeholder="Введите заголовок" spellcheck="true" name="heading"></textarea>
                     <textarea class="general" placeholder="Заметка..." spellcheck="true" name="text"></textarea>
                 </div>
-
-                <div class="push">
-                    <button class="button-1" type="submit">
-                        <p>Сохранить</p>
-                    </button>
-                    <button class="button-2">
-                        <p>Все заметки</p>
-                    </button>
-                </div>
-            </form>
-            <div class="content-box-2">
-                <div class="notes">
-                    <div th:each="el: ${notes}">
-                        <h3 th:text="${el.heading}"></h3>
-                        <h3 th:text="${el.text}"></h3>
-                        <h3>Автор этого шедевра</h3>
-                        <h3 th:text="${el.authorName}"></h3>
-                    </div>
-                </div>
-                <div class="notes">
-                    <div th:each="el : ${notes}">
-                        <h3 th:text="${el.heading}"></h3>
+            </div>
+            <div class="push">
+                <button class="button-1" type="submit">
+                    <p>Сохранить</p>
+                </button>
+                <button class="button-2">
+                    <a href="#">Все заметки</a>
+                </button>
+            </div>
+        </form>
+        <div class="content-box-2">
+            <div class="notes">
+                <div class="note-main">
+                    <div th:each="el: ${notes}" class="note-main-box">
+                        <div th:text="${el.heading}" class="note-main-box-heading">
+                            <p>Тег</p>
+                        </div>
+                        <div th:text="${el.text}" class="note-main-box-text">
+                            <p>Заметка...</p>
+                        </div>
+                        <div th:text="${el.authorName}" class="note-main-box-authorName">
+                            <p>Автор</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </main>
-        <footer>
+            <div class="notes">
+                <div class="note-hadding">
+                    <div th:each="el : ${notes}" class="note-handing-box">
+                        <a th:text="${el.heading}" th:href="@{'/rednotes'+ '/notes/'+${el.getId()}}">Тег...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
 
-        </footer>
-    </div>
+    </footer>
+</div>
 </body>
 </html>

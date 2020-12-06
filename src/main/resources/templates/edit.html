@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/notes.css">
+    <link rel="stylesheet" href="/css/edit.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/material/js/main.js"></script>
+    <title>Edit</title>
+</head>
+<body>
+<div class="conteiner">
+    <header>
+        <div class="header-box-1"></div>
+        <div class="header-box-2">
+            <h1>Red Notes</h1>
+        </div>
+        <div class="header-box-3">
+            <form th:action="@{/logout}" method="post">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                <input type="submit" value="Выйти" class="button-logout"/>
+            </form>
+        </div>
+    </header>
+    <main>
+        <div class="main-edit-conteiner">
+            <div class="main-edit-conteiner-buttons">
+                <form action="">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <button>
+                        <p>Редактировать</p>
+                    </button>
+                </form>
+                <form action="">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <button>
+                        <p>Удалить</p>
+                    </button>
+                </form>
+                <form action="">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <button>
+                        <a th:href="@{'/rednotes'+'/notes'}">Назад</a>
+                    </button>
+                </form>
+            </div>
+            <div class="main-edit-conteiner-notes">
+                <div th:each="el: ${note}" class="main-edit-conteiner-notes-box">
+                    <textarea th:text="${el.heading}" disabled=disabled class="main-edit-conteiner-notes-box-heading">
+                        <p>Тег</p>
+                    </textarea>
+                    <textarea th:text="${el.text}" disabled=disabled class="main-edit-conteiner-notes-box-text">
+                        <p>Заметка...</p>
+                    </textarea>
+                    <div th:text="${el.authorName}" class="main-edit-conteiner-notes-box-authorName">
+                        <p>Автор</p>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer>
+
+    </footer>
+</div>
+</body>
+</html>

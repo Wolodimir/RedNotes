@@ -40,6 +40,41 @@ header {
     height: 60%;
     background: white;
 }
+.header-box-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-box-3 form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.button-logout {
+    width: 50%;
+    height: 100%;
+    background: white;
+    margin: 12px;
+    outline: none;
+    padding: 0%;
+    user-select: none;
+    font-size: 1.1rem;
+    border: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.button-logout:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    color: red;
+}
+.button-logout:active {
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    color: black;
+}
+
 main {
     display: flex;
     justify-content: space-around;
@@ -53,7 +88,7 @@ main {
     height: 90%;
     background: white;
 }
-main form {
+.content-box-1 {
     width: 40%;
     height: 90%;
     background: white;
@@ -63,7 +98,7 @@ main form {
     justify-content: center;
     align-items: center;
 }
-.text form {
+.text div {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -84,7 +119,7 @@ main form {
     border: 1px solid black;
     overflow: hidden;
     font-size: 1.5rem;
-    font-family: 'Montserrat Alternates', sans-serif;  
+    font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
 }
 .general {
@@ -112,12 +147,23 @@ main form {
     background: rgb(184, 0, 0); ;
 }
 .text textarea:focus::-webkit-input-placeholder {
-    color:transparent; 
+    color:transparent;
 }
 .push {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.button-2 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    margin: 0;
 }
 .button-1, .button-2 {
     display: flex;
@@ -134,11 +180,11 @@ main form {
     border: 1px solid black;
     font-family: 'Montserrat Alternates', sans-serif;
 }
-.button-1:hover, .button-2:hover {
+.button-1:hover, .button-2 a:hover {
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
     color: red;
 }
-.button-1:active, .button-2:active {
+.button-1:active, .button-2 a:active {
     box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
     color: black;
 }
@@ -149,18 +195,131 @@ main form {
     background: white;
 }
 .notes {
-    /*display: flex;*/
+    display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 50%;
-    overflow: auto;
-
 }
-.notes div{
+.note-main {
+    overflow-y: auto;
     width: 95%;
     height: 90%;
     border: 1px solid black;
+}
+.note-main p {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+.note-main-box-text p {
+    text-align: left;
+    margin: 0;
+}
+.note-main-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 6px auto;
+    width: 95%;
+    height: 95%;
+    border: 1px solid black;
+    user-select: none;
+}
+.note-main-box-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 10%;
+    font-size: 1.2rem;
+    word-break:break-all;
+    margin-top: 5px;
+}
+.note-main-box-text {
+    width: 95%;
+    height: 75%;
+    word-break:break-all;
+    overflow-y: auto;
+}
+.note-main-box-text::-webkit-scrollbar {
+    width: 10px;
+    border: 1px solid black;
+}
+.note-main-box-text::-webkit-scrollbar-button {
+    border: 1px solid black;
+}
+.note-main-box-text::-webkit-scrollbar-thumb {
+    border: 1px solid black;
+    background: rgb(184, 0, 0); ;
+}
+.note-main-box-authorName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 10%;
+    font-size: 1.2rem;
+    word-break:break-all;
+    margin-top: 5px;
+}
+.note-main::-webkit-scrollbar {
+    width: 10px;
+    border: 1px solid black;
+}
+.note-main::-webkit-scrollbar-button {
+    border: 1px solid black;
+}
+.note-main::-webkit-scrollbar-thumb {
+    border: 1px solid black;
+    background: rgb(184, 0, 0); ;
+}
+.note-hadding {
+    width: 95%;
+    height: 90%;
+    border: 1px solid black;
+    overflow-y: auto ;
+}
+.note-handing-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: 95%;
+    height: 10%;
+    border: 1px solid black;
+    user-select: none;
+    font-size: 1.2rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    word-break:break-all;
+}
+.note-handing-box a {
+    text-decoration: none;
+    color: black;
+}
+.note-handing-box:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    color: red;
+}
+.note-handing-box:active {
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    color: black;
+}
+.note-handing-box p {
+    margin: 0;
+}
+.note-hadding::-webkit-scrollbar {
+    width: 10px;
+    border: 1px solid black;
+}
+.note-hadding::-webkit-scrollbar-button {
+    border: 1px solid black;
+}
+.note-hadding::-webkit-scrollbar-thumb {
+    border: 1px solid black;
+    background: rgb(184, 0, 0); ;
 }
 footer {
     width: 100%;

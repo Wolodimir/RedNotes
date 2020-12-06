@@ -12,7 +12,7 @@ import java.util.Set;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     private String username;
     private String password;
@@ -33,11 +33,11 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
