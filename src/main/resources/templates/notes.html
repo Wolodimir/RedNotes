@@ -7,8 +7,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/material/js/main.js"></script>
     <title>Notes</title>
 </head>
 <body>
@@ -30,8 +28,8 @@
             <div class="text">
                 <div>
                     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                    <textarea class="teg" placeholder="Введите заголовок" spellcheck="true" name="heading"></textarea>
-                    <textarea class="general" placeholder="Заметка..." spellcheck="true" name="text"></textarea>
+                    <textarea required class="teg" placeholder="Введите заголовок" spellcheck="true" name="heading"></textarea>
+                    <textarea required class="general" placeholder="Заметка..." spellcheck="true" name="text"></textarea>
                 </div>
             </div>
             <div class="push">

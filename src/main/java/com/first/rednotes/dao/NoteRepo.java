@@ -4,6 +4,7 @@ import com.first.rednotes.model.Note;
 import com.first.rednotes.model.User;
 import org.springframework.data.repository.CrudRepository;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public interface NoteRepo extends CrudRepository<Note, Integer> {
