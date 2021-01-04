@@ -4,7 +4,6 @@ import com.first.rednotes.dao.NoteRepo;
 import com.first.rednotes.dao.UserRepo;
 import com.first.rednotes.model.Note;
 import com.first.rednotes.model.User;
-import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
